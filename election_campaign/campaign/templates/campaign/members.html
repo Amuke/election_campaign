@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .container {
+            max-width: 800px; /* Increased width for better table display */
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px; /* Added margin for better spacing */
+        }
+
+        .member-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; /* Added margin for better spacing */
+        }
+
+            .member-table th, .member-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .member-table th {
+                background-color: #f2f2f2;
+            }
+
+            .member-table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'images/ANC_logo.png' %}" class="logo" alt="ANC Logo">
+        <h2>Members</h2>
+        <table class="member-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email Address</th>
+                    <th>Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                <tr>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.surname }}</td>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.cell_phone }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><a href="{% url 'home' %}" class="button">Back to Home</a></p>
+    </div>
+</body>
+</html>

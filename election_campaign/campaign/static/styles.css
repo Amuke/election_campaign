@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Set the background to white */
+    color: black; /* Default text color to black */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid black; /* Add a black border to the container */
+    border-radius: 10px; /* Add some rounded corners */
+}
+
+h1 {
+    color: green; /* Set the main heading color to green */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid green; /* Green border for input fields */
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: yellow; /* Set the button background to yellow */
+    color: black; /* Set the button text color to black */
+    border: 2px solid green; /* Green border for buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color: green; /* Change background color to green on hover */
+        color: white; /* Change text color to white on hover */
+    }
+
+a {
+    display: block;
+    margin: 10px 0;
+    color: green; /* Set link color to green */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: yellow; /* Change link color to yellow on hover */
+    }

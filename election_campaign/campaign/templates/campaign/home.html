@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, black, yellow, green, white);
+            background-size: cover;
+            background-position: center top;
+            color: black;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .button:hover {
+                background-color: #555;
+            }
+
+        .logout {
+            margin-top: 20px;
+        }
+
+        .welcome-message {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .member-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+            .member-list li {
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'images/ANC_logo.png' %}" class="logo" alt="ANC Logo">
+        <h2>Welcome to the Election Campaign</h2>
+        <div class="welcome-message">
+            <h3>ANC Election Manifesto 2024:</h3>
+            <p>
+                As adopted at the Congress of the People, Kliptown, 26 June 1955:
+                <ul>
+                    <li>South Africa belongs to all who live in it, black and white.</li>
+                    <li>Our people have been robbed of their birthright to land, liberty, and peace.</li>
+                    <!-- Add more manifesto points here -->
+                </ul>
+            </p>
+            <h3>The Freedom Charter:</h3>
+            <p>
+                As adopted at the Congress of the People, Kliptown, 26 June 1955:
+                <ul>
+                    <li>South Africa belongs to all who live in it, black and white.</li>
+                    <li>Our people have been robbed of their birthright to land, liberty, and peace.</li>
+                    <!-- Add more Freedom Charter points here -->
+                </ul>
+            </p>
+            <p>
+                The ANC is a national liberation movement founded in 1912 to unite African people and spearhead the struggle for political, social, and economic change.
+            </p>
+        </div>
+        <p><a href="{% url 'register_member' %}" class="button">Register Member</a></p>
+        <p><a href="{% url 'members' %}" class="button">View Members</a></p>
+        <form method="POST" action="{% url 'logout' %}" class="logout">
+            {% csrf_token %}
+            <button type="submit" class="button">Logout</button>
+        </form>
+    </div>
+</body>
+</html>
